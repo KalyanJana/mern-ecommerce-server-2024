@@ -259,9 +259,9 @@ export const getPieCharts = TryCatch(async(req, res, next)=>{
         }
 
         const usersAgeGroup = {
-            teen: allUsers.filter(i=>i.age<20).length,
-            adult: allUsers.filter(i=> i.age>=20 && i.age<40).length,
-            old: allUsers.filter(i=>i.age>=40).length,
+            teen: allUsers.filter(i => Number(i.age) < 20).length,
+            adult: allUsers.filter(i => Number(i.age) >= 20 && Number(i.age) < 40).length,
+            old: allUsers.filter(i => Number(i.age) >= 40).length,
         }
         const adminCustomer ={
             admin: adminUsers,
